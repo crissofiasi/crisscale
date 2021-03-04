@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrisScale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="602" Width="800">
+        Title="MainWindow" Height="602" Width="1000">
     <Grid>
         <StackPanel x:Name="stkComandaAprovizionare" HorizontalAlignment="Left" Margin="33,30,0,0" VerticalAlignment="Top" Orientation="Horizontal" >
             <StackPanel.DataContext>
@@ -34,12 +34,29 @@
             </StackPanel>
 
 
-     
+
 
 
 
         </StackPanel>
-        <Button x:Name="btnGetPO" Content="Get PO" HorizontalAlignment="Left" Height="26" Margin="507,30,0,0" VerticalAlignment="Top" Width="134" IsCancel="True" Click="BtnGetPO_Click"/>
+
+        <Button x:Name="btnGetPO" Content="Get PO" HorizontalAlignment="Left" Height="26" Margin="151,258,0,0" VerticalAlignment="Top" Width="134" IsCancel="True" Click="BtnGetPO_Click" RenderTransformOrigin="-2.224,8.231"/>
+        <StackPanel x:Name="stkCantariri" HorizontalAlignment="Left" Margin="339,30,0,113" Orientation="Horizontal" Width="643" d:DataContext="{d:DesignInstance {x:Type local:Cantarire}}" >
+            <DataGrid x:Name="dtGdCantariri" Width="617" ItemsSource="{Binding Mode=OneWay}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Nota}" ClipboardContentBinding="{x:Null}" Header="Observatii"/>
+                    <DataGridTextColumn Binding="{Binding Data_in, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" ClipboardContentBinding="{x:Null}" Header="Data Intrarii"/>
+                    <DataGridTextColumn Binding="{Binding Greutate_in}" ClipboardContentBinding="{x:Null}" Header="Greutate Intrare"/>
+                    <DataGridTextColumn Binding="{Binding Nume_client}" ClipboardContentBinding="{x:Null}" Header="Furnuzor/Client"/>
+                    <DataGridTextColumn Binding="{Binding Nume_sofer}" ClipboardContentBinding="{x:Null}" Header="Sofer"/>
+                    <DataGridTextColumn Binding="{Binding Nume_transp}" ClipboardContentBinding="{x:Null}" Header="Transportator"/>
+                    <DataGridTextColumn Binding="{Binding Nume_masina}" ClipboardContentBinding="{x:Null}" Header="Masina"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+        </StackPanel>
+        <Button x:Name="btnUpdate" Content="Actualizeaza tichet" HorizontalAlignment="Left" Margin="151,289,0,0" VerticalAlignment="Top" Width="134" Height="26" Click="BtnUpdate_Click"/>
 
     </Grid>
 </Window>
