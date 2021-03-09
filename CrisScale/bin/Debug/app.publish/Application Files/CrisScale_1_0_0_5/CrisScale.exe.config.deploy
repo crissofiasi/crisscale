@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <clear/>
+    <add name="priority" connectionString="Data Source=S44022\PRI;Initial Catalog=a012915;Persist Security Info=True;User ID=tabula;Password=tabula~!2;" providerName="System.Data.SqlClient"/>
+    <add name="dsp_scales" connectionString="server=10.9.9.9;user id=root;database=dsp_scales" providerName=".NET Framework Data Provider for MySQL"/>
+  </connectionStrings> 
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2"/></startup></configuration>

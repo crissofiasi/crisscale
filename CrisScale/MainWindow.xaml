@@ -5,44 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrisScale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="602" Width="1000">
+        Title="MainWindow" Height="499" Width="1000">
     <Grid>
-        <StackPanel x:Name="stkComandaAprovizionare" HorizontalAlignment="Left" Margin="33,30,0,0" VerticalAlignment="Top" Orientation="Horizontal" >
-            <StackPanel.DataContext>
-                <local:ComandaAchizitie/>
-            </StackPanel.DataContext>
 
-            <StackPanel HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" >
-                <Label Content="Comanda de vanzare:" Height="23" Margin="2" HorizontalAlignment="Right"/>
-                <Label Content="Furnizor:" Height="23" Margin="2" HorizontalAlignment="Right" />
-                <Label Content="Destinatie:" Height="23" Margin="2" HorizontalAlignment="Right" />
-                <Label Content="Transportator:" Height="23" Margin="2" HorizontalAlignment="Right" />
-                <Label Content="Delegat:" Height="23" Margin="2" HorizontalAlignment="Right"/>
-                <Label Content="Masina:" Height="23" Margin="2" HorizontalAlignment="Right" />
-                <Label Content="Sofer:" Height="23" Margin="2" HorizontalAlignment="Right"/>
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" >
-                <TextBox x:Name="txtPurchaseOrder"  Height="23" Margin="2"  TextWrapping="Wrap" Text="{Binding NumePo}" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtFurnizor"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeFurnizor}" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtDestinatie"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeDestinatie}" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtTransportator"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeTransportator}" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtDelegat"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeDelegat}" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtMasina"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeMasina}" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="txtSofer"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeSofer}" VerticalAlignment="Top" Width="120"/>
-
-
-            </StackPanel>
-
-
-
-
-
-
-        </StackPanel>
-
-        <Button x:Name="btnGetPO" Content="Get PO" HorizontalAlignment="Left" Height="26" Margin="151,258,0,0" VerticalAlignment="Top" Width="134" IsCancel="True" Click="BtnGetPO_Click" RenderTransformOrigin="-2.224,8.231"/>
-        <StackPanel x:Name="stkCantariri" HorizontalAlignment="Left" Margin="339,30,0,113" Orientation="Horizontal" Width="643" d:DataContext="{d:DesignInstance {x:Type local:Cantarire}}" >
-            <DataGrid x:Name="dtGdCantariri" Width="617" ItemsSource="{Binding Mode=OneWay}" AutoGenerateColumns="False">
+        <StackPanel x:Name="stkCantariri" HorizontalAlignment="Left" Margin="339,30,0,10" Orientation="Horizontal" Width="643" d:DataContext="{d:DesignInstance {x:Type local:Cantarire}}" >
+            <DataGrid x:Name="dtGdCantariri" Width="640" ItemsSource="{Binding Mode=OneWay}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Nota}" ClipboardContentBinding="{x:Null}" Header="Observatii"/>
                     <DataGridTextColumn Binding="{Binding Data_in, StringFormat=\{0:dd.MM.yy HH:mm:ss\}}" ClipboardContentBinding="{x:Null}" Header="Data Intrarii"/>
@@ -56,7 +23,76 @@
 
 
         </StackPanel>
-        <Button x:Name="btnUpdate" Content="Actualizeaza tichet" HorizontalAlignment="Left" Margin="151,289,0,0" VerticalAlignment="Top" Width="134" Height="26" Click="BtnUpdate_Click"/>
+        <TabControl HorizontalAlignment="Left" Height="448" Margin="10,10,0,0" VerticalAlignment="Top" Width="324">
+            <TabItem x:Name="tabComandaAchizitie" Header="Comanda achizitie">
+                <Grid Background="#FFE5E5E5">
+
+
+                    <StackPanel x:Name="stkComandaAprovizionare" HorizontalAlignment="Left" Margin="2,30,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="3" >
+                        <StackPanel.DataContext>
+                            <local:ComandaAchizitie/>
+                        </StackPanel.DataContext>
+
+                        <StackPanel HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" >
+                            <Label Content="Comanda vnz:" Height="23" Margin="2" HorizontalAlignment="Right"/>
+                            <Label Content="Furnizor:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Destinatie:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Transportator:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Delegat:" Height="23" Margin="2" HorizontalAlignment="Right"/>
+                            <Label Content="Masina:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Sofer:" Height="23" Margin="2" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" >
+                            <TextBox x:Name="txtPurchaseOrder"  Height="23" Margin="2"  TextWrapping="Wrap" Text="{Binding NumePo}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox x:Name="txtFurnizor"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeFurnizor}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox x:Name="txtDestinatie"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeDestinatie}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox x:Name="txtTransportator"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeTransportator}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox x:Name="txtDelegat"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeDelegat}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox x:Name="txtMasina"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeMasina}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox x:Name="txtSofer"  Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeSofer}" VerticalAlignment="Top" Width="220"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="btnGetPO" Content="Get PO" HorizontalAlignment="Left" Height="26" Margin="79,258,-13,0" VerticalAlignment="Top" Width="134" IsCancel="True" Click="BtnGetPO_Click" RenderTransformOrigin="-2.224,8.231" Grid.Column="2"/>
+                    <Button x:Name="btnUpdate" Content="Actualizeaza tichet" HorizontalAlignment="Left" Margin="79,289,0,0" VerticalAlignment="Top" Width="134" Height="26" Click="BtnUpdate_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabAeBrut" Header="Aviz Expeditie Brut">
+                <Grid Background="#FFE5E5E5">
+
+
+                    <StackPanel x:Name="stkAvizBrut" HorizontalAlignment="Left" Margin="2,30,-13,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.ColumnSpan="3" >
+                        <StackPanel.DataContext>
+                            <local:AvizExpeditie/>
+                        </StackPanel.DataContext>
+
+                        <StackPanel HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" >
+                            <Label Content="Aviz Expeditie:" Height="23" Margin="2" HorizontalAlignment="Right"/>
+                            <Label Content="Client:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Destinatie:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Transportator:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Delegat:" Height="23" Margin="2" HorizontalAlignment="Right"/>
+                            <Label Content="Masina:" Height="23" Margin="2" HorizontalAlignment="Right" />
+                            <Label Content="Sofer:" Height="23" Margin="2" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" >
+                            <TextBox   Height="23" Margin="2"  TextWrapping="Wrap" Text="{Binding NumeSh}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox   Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeClient}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox   Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeDestinatie}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox   Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeTransportator}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox   Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeDelegat}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox   Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeMasina}" VerticalAlignment="Top" Width="220"/>
+                            <TextBox   Height="23" Margin="2" TextWrapping="Wrap" Text="{Binding NumeSofer}" VerticalAlignment="Top" Width="220"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="btnGetAviz" Content="Get Aviz Expeditie" HorizontalAlignment="Left" Height="26" Margin="79,258,-13,0" VerticalAlignment="Top" Width="134" IsCancel="True" RenderTransformOrigin="-2.224,8.231" Grid.Column="2" Click="BtnGetAviz_Click"/>
+                    <Button x:Name="btnUpdateAviz" Content="Actualizeaza tichet" HorizontalAlignment="Left" Margin="79,289,0,0" VerticalAlignment="Top" Width="134" Height="26" Click="BtnUpdateAviz_Click" />
+
+
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="938,11,0,0" VerticalAlignment="Top" Width="44" Click="BtnRefresh_Click"/>
 
     </Grid>
 </Window>

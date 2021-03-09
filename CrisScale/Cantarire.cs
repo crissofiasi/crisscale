@@ -736,7 +736,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                 
                     try
                     {
                         if (reader.HasRows)
@@ -805,7 +805,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                   
                     try
                     {
                         if (reader.HasRows)
@@ -835,7 +835,7 @@ namespace CrisScale
                         }
 
                         cmd.Parameters.AddWithValue("@nume_firma", this.nume_transp);
-                        i = 0;
+                    
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -872,7 +872,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                   
                     try
                     {
                         if (reader.HasRows)
@@ -902,7 +902,7 @@ namespace CrisScale
 
                         cmd.Parameters.AddWithValue("@client", this.client.ToString());
                         cmd.Parameters.AddWithValue("@transportator", this.transportator.ToString());
-                        i = 0;
+                      
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -943,7 +943,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                   
                     try
                     {
                         if (reader.HasRows)
@@ -973,7 +973,7 @@ namespace CrisScale
                         }
 
                         cmd.Parameters.AddWithValue("@nr_inmat", this.nume_masina);
-                        i = 0;
+                     
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -1011,7 +1011,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                   
                     try
                     {
                         if (reader.HasRows)
@@ -1041,7 +1041,7 @@ namespace CrisScale
 
                         cmd.Parameters.AddWithValue("@masina", this.masina.ToString());
                         cmd.Parameters.AddWithValue("@transportator", this.transportator.ToString());
-                        i = 0;
+                      
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -1082,7 +1082,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                   
                     try
                     {
                         if (reader.HasRows)
@@ -1112,7 +1112,7 @@ namespace CrisScale
                         }
 
                         cmd.Parameters.AddWithValue("@nume", this.nume_sofer);
-                        i = 0;
+                      
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -1149,7 +1149,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                    
                     try
                     {
                         if (reader.HasRows)
@@ -1179,7 +1179,7 @@ namespace CrisScale
 
                         cmd.Parameters.AddWithValue("@sofer", this.sofer.ToString());
                         cmd.Parameters.AddWithValue("@transportator", this.transportator.ToString());
-                        i = 0;
+                     
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -1218,7 +1218,7 @@ namespace CrisScale
                     MySqlCommand command = new MySqlCommand(queryString, connection);
                     connection.Open();
                     MySqlDataReader reader = command.ExecuteReader();
-                    int i = 0;
+                  
                     try
                     {
                         if (reader.HasRows)
@@ -1248,7 +1248,7 @@ namespace CrisScale
 
                         cmd.Parameters.AddWithValue("@sofer", this.sofer.ToString());
                         cmd.Parameters.AddWithValue("@masina", this.masina.ToString());
-                        i = 0;
+                     
                         try
                         {
                             cmd.ExecuteNonQuery();
